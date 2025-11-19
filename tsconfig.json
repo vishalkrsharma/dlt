@@ -28,5 +28,7 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "out": "./dist",
+  "declaration": true
 }

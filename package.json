@@ -1,10 +1,14 @@
 {
   "name": "dlt",
-  "module": "src/index.ts",
+  "version": "0.0.1",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "bun build src/index.ts --outdir ./dist --target node --minify",
-    "dev": "bun run src/index.ts"
+    "build": "bun build ./src/index.ts --outdir ./dist --target node && bun run types",
+    "types": "tsc -p tsconfig.types.json",
+    "dev": "bun run src/index.ts",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/bun": "latest",
